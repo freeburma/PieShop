@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\Content\site.css" />
+    <Content Include="wwwroot" />
+    <Content Include="Views" />
+    <Content Include="web.config" />
+    
+    
+    <Content Include="wwwroot\Images\bethanylogo.png" />
+    <Content Include="wwwroot\Images\carousel1.jpg" />
+    <Content Include="wwwroot\Images\carousel2.jpg" />
+    <Content Include="wwwroot\Images\carousel3.jpg" />
+    <Content Include="wwwroot\Images\pattern.png" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.0.0" />
+
+    
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.0.0" />
+    
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.0.0" />
+    
+    
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Tools" Version="1.0.0-preview2-final" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.1" />
+    
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" /> <!-- Creating a database and migration-->
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.0" /> <!-- Reading Config String -->
+
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration.Tools" Version="1.0.0-preview2-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Tools" Version="1.0.0-preview2-final" />
+    
+    
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+  
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.1.0-preview4-final" />
+   
+    
+  </ItemGroup>
+
+</Project>

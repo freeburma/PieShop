@@ -1,0 +1,141 @@
+﻿<!-- 
+    Adding the Razor code 
+    PieShop.ViewModels.PiesListViewModel => PiesListViewModel because of _ViewImports.cshtml
+    -->
+@*
+ // Removing because of PieViewModel.cs
+
+ @model PiesListViewModel
+
+<!--
+    
+# Removing the HTML tags because of ./Views/Shared/_Layout.cshtml
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Pie Shop </title>
+    </head>
+    <body>
+        -->
+
+        <h1> @Model.CurrentCategory </h1>
+
+        <!-- Looping -->
+        @foreach (var pie in Model.Pies)
+        {
+           
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="@pie.ImageThumbnailUrl" alt="" />
+
+                    <div class="caption">
+                        <h3 class="pull-right"> @pie.Price.ToString("c")</h3>
+
+                        <h3>
+                            <a> @pie.Name </a>
+                        </h3>
+
+                        <p> @pie.ShortDescription </p>
+
+                    </div>
+                </div>
+            </div>
+           
+
+            <!-- Adding from PieOverviewSummary.cshtml to invoke Partial View -->
+            @Html.Partial("PieOverviewSummary", pie); 
+
+        }
+
+*@
+
+<div id="pieDiv">
+
+</div>
+
+<!--
+    Adding section for the client with Bower
+    scripts: is defined the _Layout.cshtml file. Has to be the exact same name
+    -->
+@section scripts 
+{
+    @* Invoking the API controller  *@
+    <script>
+
+        @* Loading the pie at the beginning *@
+        $(document).ready(
+            function ()
+            {
+                LoadMorePies();
+            }
+        );
+
+        @* Loading more after end of the page *@
+        $(window).scroll(function ()
+        {
+            if ($(window).scrollTop() == $(document).height() - $(window).height())
+            {
+                LoadMorePies();
+            }
+        });
+
+
+
+        @* Async Request *@
+        function LoadMorePies()
+        {
+            $.ajax({
+                type: 'GET',
+                url: '/api/PieData',
+                dataType: 'json',
+                success: function (jsonData) {
+                    if (jsonData == null) {
+                        alert('No data returned ...');
+                        return;
+
+                    }@* end if *@
+
+                    $.each(jsonData, function (index, pie)
+                    {
+                        var PieSummaryString = ' <div class="col-sm-4 col-lg-4 col-md-4"> ' +
+                                                ' <div class="thumbnail"> ' +
+                                                    ' <img src=" ' + pie.imageThumbnailUrl + '" alt="" /> ' +
+                                                        ' <div class="caption" > ' +
+                                                        ' <h3> ' + '<a href=/Pie/Details/' + pie.pieId + '>' + pie.name + '</a> </h3> ' +
+                                                        ' <p> ' + pie.shortDescription + '</p>' +
+                                                ' </div> ' +
+
+                                                ' <div class="addToCart" > ' +
+                                                    ' <p class="button"> ' +
+                                                    ' <a class="btn btn-primary" href=/ShoppingCart/AddToShoppingCart? pieId=' + pie.pieId + '> Add to cart </a> ' +
+                                                    ' </p>' +
+                                                 ' <div> ' +
+                                                ' </div> ' +
+                                            ' </div> ';
+
+                        $('#pieDiv').append(PieSummaryString);
+
+                    });@* end each() *@
+
+                }, @* end success() *@
+
+                error: function (ex)
+                {
+                    alert(ex);
+
+                }
+
+            }); @* end ajax req () *@
+
+        }@* end LoadMorePies () *@
+
+    </script>
+
+}
+
+<!--
+    </body>
+</html>
+    -->

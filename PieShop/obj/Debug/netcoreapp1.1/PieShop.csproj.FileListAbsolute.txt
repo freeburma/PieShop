@@ -1,0 +1,9 @@
+E:\Programing\ASP .Net\PieShop\PieShop\bin\Debug\netcoreapp1.1\PieShop.deps.json
+E:\Programing\ASP .Net\PieShop\PieShop\bin\Debug\netcoreapp1.1\PieShop.runtimeconfig.json
+E:\Programing\ASP .Net\PieShop\PieShop\bin\Debug\netcoreapp1.1\PieShop.runtimeconfig.dev.json
+E:\Programing\ASP .Net\PieShop\PieShop\bin\Debug\netcoreapp1.1\PieShop.dll
+E:\Programing\ASP .Net\PieShop\PieShop\bin\Debug\netcoreapp1.1\PieShop.pdb
+E:\Programing\ASP .Net\PieShop\PieShop\obj\Debug\netcoreapp1.1\PieShop.AssemblyInfo.cs
+E:\Programing\ASP .Net\PieShop\PieShop\obj\Debug\netcoreapp1.1\PieShop.dll
+E:\Programing\ASP .Net\PieShop\PieShop\obj\Debug\netcoreapp1.1\PieShop.pdb
+E:\Programing\ASP .Net\PieShop\PieShop\obj\Debug\netcoreapp1.1\PieShop.csprojResolveAssemblyReference.cache
